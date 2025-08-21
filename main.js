@@ -60,7 +60,6 @@ function agregarAlCarrito(id) {
   guardarCarrito();
   renderCarrito();
 
-  // SweetAlert cuando se agrega producto
   Swal.fire({
     title: "Producto agregado",
     text: `${producto.nombre} se agregó al carrito`,
