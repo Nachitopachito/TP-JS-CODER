@@ -1,0 +1,5 @@
+[
+  { "id": 1, "nombre": "Estilo Moderno", "precio": 12000, "imagen": "img/gafa1.webp" },
+  { "id": 2, "nombre": "Modelo Clásico", "precio": 14500, "imagen": "img/gafa2.webp" },
+  { "id": 3, "nombre": "Elegante Oscuro", "precio": 15800, "imagen": "img/gafa3.webp" }
+]
