@@ -44,7 +44,7 @@ function renderProductos() {
         <div class="card-body">
           <h5 class="card-title">${prod.nombre}</h5>
           <p class="card-text">$${prod.precio}</p>
-          <button class="btn btn-primary w-100" data-id="${prod.id}">Agregar al carrito</button>
+          <button class="btn btn-agregar w-100" data-id="${prod.id}">Agregar al carrito</button>
         </div>
       </div>
     `;
@@ -77,7 +77,7 @@ function renderCarrito() {
 
   if (carrito.length === 0) {
     const li = document.createElement("li");
-    li.className = "list-group-item text-center";
+    li.className = "list-group-item text-center carrito-vacio";
     li.textContent = "El carrito está vacío.";
     listaCarrito.appendChild(li);
     if (totalCarrito) totalCarrito.textContent = "Total: $0";
@@ -89,7 +89,7 @@ function renderCarrito() {
     li.className = "list-group-item d-flex justify-content-between align-items-center";
     li.innerHTML = `
       ${item.nombre} <span>$${item.precio}</span>
-      <button class="btn btn-sm btn-outline-danger btn-eliminar" data-index="${index}">Eliminar</button>
+      <button class="btn btn-eliminar btn-outline-danger" data-index="${index}">Eliminar</button>
     `;
     listaCarrito.appendChild(li);
     totalCompra += item.precio;
@@ -98,6 +98,7 @@ function renderCarrito() {
   if (totalCarrito) totalCarrito.textContent = "Total: $" + totalCompra;
 }
 
+// Agregar al carrito
 if (contenedor) {
   contenedor.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON" && e.target.dataset.id) {
@@ -106,6 +107,7 @@ if (contenedor) {
   });
 }
 
+// Eliminar del carrito
 if (listaCarrito) {
   listaCarrito.addEventListener("click", (e) => {
     if (e.target.classList.contains("btn-eliminar")) {
@@ -117,6 +119,7 @@ if (listaCarrito) {
   });
 }
 
+// Limpiar carrito
 if (btnLimpiarCarrito) {
   btnLimpiarCarrito.addEventListener("click", () => {
     carrito = [];
@@ -125,6 +128,7 @@ if (btnLimpiarCarrito) {
   });
 }
 
+// Finalizar compra con confirmación
 if (btnFinalizarCompra) {
   btnFinalizarCompra.addEventListener("click", () => {
     if (carrito.length === 0) {
@@ -137,15 +141,26 @@ if (btnFinalizarCompra) {
       return;
     }
 
-    carrito = [];
-    guardarCarrito();
-    renderCarrito();
-
     Swal.fire({
-      title: "Compra realizada",
-      text: "Muchas gracias por tu compra 😎",
-      icon: "success",
-      confirmButtonText: "Genial"
+      title: "¿Está seguro que desea realizar la compra?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Sí, comprar",
+      cancelButtonText: "Cancelar",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        carrito = [];
+        guardarCarrito();
+        renderCarrito();
+
+        Swal.fire({
+          title: "Compra realizada",
+          text: "Muchas gracias por tu compra 😎",
+          icon: "success",
+          confirmButtonText: "Genial"
+        });
+      }
     });
   });
 }

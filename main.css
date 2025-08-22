@@ -1,16 +1,120 @@
 body {
-  background-color: #fceffc;
+  background-color: #EDE5D8;
   font-family: 'Segoe UI', sans-serif;
 }
 
-.card img {
-  object-fit: cover;
-  height: 200px;
+main {
+  background-color: #EDE5D8;
 }
+
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e5d9d0;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 240px; 
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.card img {
+  border-bottom: 1px solid #ddd;
+  max-height: 160px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a3f35;
+}
+
+.card-text {
+  color: #5c4b3b;
+  font-weight: 500;
+}
+
+
+.btn-agregar {
+  background-color: #4E2E96; 
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #9d72c7;
+  transform: scale(1.03);
+}
+
+
+.btn-eliminar {
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+
+.btn-finalizar {
+  background-color: #4E2E96; 
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-finalizar:hover {
+  background-color: #9d72c7;
+  transform: scale(1.03);
+}
+
+
+.btn-limpiar {
+  background-color: #d9534f; 
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-limpiar:hover {
+  background-color: #c9302c;
+  transform: scale(1.03);
+}
+
+
+.btn-volver {
+  background-color: #d1c4e9; 
+  color: #4a3f35;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-volver:hover {
+  background-color: #b39ddb;
+}
+
 
 .logo-navbar {
   width: 100px;
-  height: px;
   object-fit: contain;
 }
 
@@ -22,4 +126,64 @@ body {
 
 h2 {
   font-weight: bold;
+  color: #4a3f35;
 }
+
+
+.swal-popup {
+  background-color: #fdf6ec !important; 
+  color: #4a3f35 !important;
+  border-radius: 16px !important;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.swal-btn {
+  background-color: #4E2E96 !important; 
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 8px 16px !important;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.swal-btn:hover {
+  background-color: #9d72c7 !important;
+  transform: scale(1.05);
+}
+
+
+.swal-popup {
+  background-color: #fdf6ec !important; 
+  color: #4a3f35 !important;
+  border-radius: 16px !important;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.swal-btn {
+  background-color: #4E2E96 !important; 
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 8px 16px !important;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.swal-btn:hover {
+  background-color: #9d72c7 !important;
+  transform: scale(1.05);
+}
+
+.carrito-vacio {
+  background-color: #fff; 
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px auto; 
+  width: 50%; 
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+li {list-style: none;}
+
