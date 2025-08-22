@@ -17,6 +17,7 @@ main {
   max-width: 240px; 
   margin: auto;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  width: 100%;
 }
 
 .card:hover {
